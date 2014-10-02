@@ -1,26 +1,26 @@
 {
   "name": "skeleton",
   "version": "0.1.0",
-  "description": "structuring expressjs application",
+  "description": "NodeJS + AngularJS Sales and Inventory System",
   "main": "server/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/joeyhipolito/skeleton.git"
+    "url": "git://github.com/joeyhipolito/ng-node-sales.git"
   },
   "keywords": [
     "skeleton",
     "expressjs",
     "nodejs",
-    "structuring-expressjs"
+    "sales-and-inventory",
+    "angularjs"
   ],
   "author": "Joey Hipolito <hi@joeyhipolito.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/joeyhipolito/skeleton/issues"
+    "url": "https://github.com/joeyhipolito/ng-node-sales/issues"
   },
   "dependencies": {
     "debug": "~2.0.0",
