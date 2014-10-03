@@ -1,5 +1,5 @@
 function index (req, res) {
-  res.send('Hello World');
+  res.render('home/index');
 }
 
 function init (router) {
