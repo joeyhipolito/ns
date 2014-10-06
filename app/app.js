@@ -10,6 +10,7 @@ var cookieParser = require('cookie-parser');
 
 var app      = express();
 var passport = require('passport');
+require('app/auth/passport')(passport);
 var router   = express.Router();
 
 mongoose.connect(require('app/config.js').db.url);
@@ -22,7 +23,7 @@ app.set('view engine', 'jade');
 
 app.use(session({
   secret: 'karakasmongubodngsama',
-  saveUninitialize: true,
+  saveUninitialized: true,
   resave: true
 }));
 

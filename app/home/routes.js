@@ -6,4 +6,4 @@ function setup (router, passport) {
   router.get('/', index);
 };
 
-module.exports = init;
+module.exports = setup;

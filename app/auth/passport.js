@@ -27,4 +27,29 @@ module.exports = function (passport) {
       return done(null, user);
     });
   }));
+
+  passport.use('register', new LocalStrategy({
+    usernameField: 'username',
+    passwordField: 'password',
+    passReqToCallback: true
+  }, function (req, username, password, done) {
+    User.findOne({'username': username}, function (err, user) {
+      if (err) return done(err);
+      if (user) {
+        return done(null, false);
+      } else {
+        var newUser = new User();
+        newUser.username = username;
+        newUser.password = newUser.generateHash(password);
+        newUser.lastname = req.body.lastname;
+        newUser.firstname = req.body.firstname;
+        newUser.save(function (err, user) {
+          if (err) throw err;
+          return done(null, newUser);
+        });
+      }
+    });
+  }
+  
+  ));
 };

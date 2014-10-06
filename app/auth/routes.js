@@ -4,28 +4,7 @@ function login (req, res) {
 }
 
 function register (req, res) {
-  var post = req.body;
-  User.findOne({'username': post.username}, function (err, user) {
-    if (err) res.json({error: err});
-    if (user) {
-      res.json({error: 'username already taken'});
-    } else {
-      var user = new User();
-      user.username = post.username;
-      user.password = user.generateHash(post.password);
-      user.lastname = post.lastname;
-      user.firstname = post.firstname;
-      user.save(function (err, user) {
-        if (err) {
-          res.json({error: err});
-        } else {
-          passport.authenticate('login')(req, res, function () {
-            res.json(req.user);
-          });
-        }
-      });
-    }
-  });
+  res.json({message: 'successfully registered'});
 };
 
 function session (req, res) {
@@ -34,7 +13,7 @@ function session (req, res) {
 
 function setup (router, passport) {
   router.get('/auth', session);
-  router.post('/register', register);
+  router.post('/register', passport.authenticate('register'), register);
 };
 
-module.exports = init;
+module.exports = setup;
