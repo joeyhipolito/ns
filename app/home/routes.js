@@ -2,7 +2,7 @@ function index (req, res) {
   res.render('home/index');
 };
 
-function init (router) {
+function setup (router, passport) {
   router.get('/', index);
 };
 

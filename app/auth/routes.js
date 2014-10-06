@@ -1,6 +1,4 @@
 var User = require('app/user/UserModel');
-var passport = require('passport');
-require('app/auth/passport')(passport);
 
 function login (req, res) {
 }
@@ -34,7 +32,7 @@ function session (req, res) {
   res.json({ some: true, another: 'cool'});
 };
 
-function init (router) {
+function setup (router, passport) {
   router.get('/auth', session);
   router.post('/register', register);
 };
