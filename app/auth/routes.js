@@ -9,7 +9,7 @@ function register (req, res) {
 };
 
 function session (req, res) {
-  res.json({ some: true, another: 'cool'});
+  res.json(req.user);
 };
 
 function logout (req, res) {
