@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var express  = require('express');
+var path     = require('path');
 var logger   = require('morgan');
 var mongoose = require('mongoose');
 var session  = require('express-session');
@@ -20,7 +21,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.set('views', __dirname); 
 app.set('view engine', 'jade');
-app.use(express.static(__dirname, '/public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
   secret: 'karakasmongubodngsama',
