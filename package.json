@@ -4,7 +4,7 @@
   "description": "NodeJS + AngularJS Sales and Inventory System",
   "main": "server/app.js",
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "NODE_ENV=development nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
     "express-session": "~1.8.2"
   },
   "devDependencies": {
-    "nodemon": "~1.2.1"
+    "nodemon": "~1.2.1",
+    "errorhandler": "~1.2.0"
   }
 }

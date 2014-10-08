@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 var session  = require('express-session');
 var bodyParser   = require('body-parser');
 var cookieParser = require('cookie-parser');
+var errorhandler = require('errorhandler');
 
 var app      = express();
 var passport = require('passport');
@@ -38,5 +39,8 @@ app.use(passport.session());
 });
 
 app.use('/', router);
+if(process.env.NODE_ENV === 'development') {
+  app.use(errorhandler());
+}
 
 module.exports = app;
