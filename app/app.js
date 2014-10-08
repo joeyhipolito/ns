@@ -2,7 +2,6 @@
 
 var express  = require('express');
 var logger   = require('morgan');
-var path     = require('path');
 var mongoose = require('mongoose');
 var session  = require('express-session');
 var bodyParser   = require('body-parser');
@@ -20,6 +19,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.set('views', __dirname); 
 app.set('view engine', 'jade');
+app.use(express.static(__dirname, '/public'));
 
 app.use(session({
   secret: 'karakasmongubodngsama',
