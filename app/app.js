@@ -20,7 +20,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.set('views', __dirname); 
-app.set('view engine', 'jade');
+app.set('view engine', 'html');
+app.engine('html', require('hogan-express'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
