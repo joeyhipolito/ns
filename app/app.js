@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 var express  = require('express');
-var path     = require('path');
 var logger   = require('morgan');
 var mongoose = require('mongoose');
 var session  = require('express-session');
@@ -10,8 +9,6 @@ var cookieParser = require('cookie-parser');
 var errorhandler = require('errorhandler');
 
 var app      = express();
-var passport = require('passport');
-require('app/auth/passport')(passport);
 var router   = express.Router();
 
 mongoose.connect(require('app/config.js').db.url);
@@ -19,25 +16,17 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.set('views', __dirname); 
-app.set('view engine', 'html');
-app.engine('html', require('hogan-express'));
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(session({
   secret: 'karakasmongubodngsama',
   saveUninitialized: true,
   resave: true
 }));
 
-app.use(passport.initialize());
-app.use(passport.session());
-
 [
   'app/home/routes',
   'app/auth/routes'
 ].forEach(function (routePath) {
-  require(routePath)(router, passport);
+  require(routePath)(app, router);
 });
 
 app.use('/', router);

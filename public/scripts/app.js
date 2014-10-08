@@ -7,7 +7,7 @@ angular
     'ui.router',
    'http-route-interceptor'
   ])
-  .config(functon ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     // authentication || index page
     $stateProvider

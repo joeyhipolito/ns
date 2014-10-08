@@ -1,4 +1,7 @@
+var passport = require('passport');
 var User = require('app/user/UserModel');
+
+require('app/auth/passport')(passport);
 
 function login (req, res) {
   res.json(req.user);
@@ -16,7 +19,10 @@ function logout (req, res) {
   req.logout();
 };
 
-function setup (router, passport) {
+function setup (app, router) {
+  app.use(passport.initialize());
+  app.use(passport.session());
+  
   router.get('/auth', session);
   router.post('/auth', passport.authenticate('login'), login);
   router.delete('/auth', logout);
