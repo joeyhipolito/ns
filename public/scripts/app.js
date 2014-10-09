@@ -5,7 +5,7 @@ angular
     'ngResource',
     'ngSanitize',
     'ui.router',
-   'http-route-interceptor'
+    'http-auth-interceptor'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');

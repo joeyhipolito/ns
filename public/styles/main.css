@@ -1,3 +1,55 @@
-body {
-  background: #333;
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.b-site {
+  position: relative;
+  height: 100%;
+}
+
+.b-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+
+/* utilities */
+
+/* aligner [center, middle, center-middle] */
+.b-aligner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.b-aligner__item {
+  position: absolute;
+}
+
+.b-aligner__item--center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.b-aligner__item--middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.b-aligner__item--midcenter {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
