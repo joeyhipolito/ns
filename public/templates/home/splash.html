@@ -1,11 +1,28 @@
-<div class="b-aligner">
+<div class="b-aligner ben-splash">
   <div class="b-aligner__item b-aligner__item--midcenter">
     <section class="app-branding b-media b-media--center">
-      <span class="b-media__fig ion-flask"></span>
-      <div class="b-media__bd">
-        <h1>Benseth</h1>
-        <span>Drugstore</span>
+      <img class="b-media__fig ben-splash__logo" src="images/lab.svg" alt="">
+      <div class="b-media__bd ben-branding">
+        <h1 class="ben-header_title ben-splash__title">Benseth</h1>
+        <span class="ben-header_subtitle upper">Drugstore</span>
       </div>
     </section>
+    <form ng-submit="login()" novalidate class="ben-login">
+      <div class="b-media b-media--center b-input b-input--outline">
+        <span class="b-media__fig b-input__icon ion-ios7-person-outline"></span>
+        <input class="b-media__bd b-input__element" type="text" ng-model="user.username" placeholder="Enter username here">
+      </div>
+      <div class="b-media b-media--center b-input b-input--outline">
+        <span class="b-media__fig b-input__icon ion-ios7-locked-outline"></span>
+        <input class="b-media__bd b-input__element" type="password" ng-model="user.password" placeholder="Enter password here">
+      </div>
+      <a ng-click="login()" class="b-media b-media--center b-input b-input--outline b-input_button b-float--right">
+        <span class="b-media__fig b-input__icon ion-ios7-checkmark-empty"></span>
+        <div class="b-media__bd b-input__element b-input_button__text">Login</div>
+      </a>
+      <div class="b-clearfix"></div>
+      <input class="hidden" type="submit"></input>
+    </form>
   </div>
+  
 </div>

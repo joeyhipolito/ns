@@ -4,10 +4,62 @@
   -moz-box-sizing: border-box;
 }
 
+/* placeholder defaults */
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #7f8c8d;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #7f8c8d;
+  opacity: 1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #7f8c8d;
+  opacity: 1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #7f8c8d;
+}
+
 html, body {
   padding: 0;
   margin: 0;
   height: 100%;
+}
+
+body {
+  font-family: 'Roboto', Helvetica Neue, ProximaNova, Open Sans, Arial, sans-serif;
+  font-weight: 300;
+  color: #333;
+}
+
+/* headers reset */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+h1, h2 {
+  font-weight: 100;
+}
+
+h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+/* paragraph reset */
+
+p {
+  margin: 0;
+  line-height: 1.2em;
+}
+
+/* anchor reset */
+
+a, a:link, a:active, a:visited {
+  text-decoration: none;
+  color: #c7d4e0;
 }
 
 .b-site {
@@ -22,10 +74,49 @@ html, body {
 }
 
 /* application specific (prefix: ben) */
+/* site sections */
+.ben-splash {
+  background: #f8f8f8;
+}
+
+.ben-login {
+  padding: 10px;
+}
+
+.ben-branding {
+  text-align: center;
+}
+
+.ben-splash__title {
+  font-weight: 700;
+}
+
+.ben-splash__logo {
+  height: 97px;
+}
+
 .ben-media__fig {
   margin-right: 1em;
 }
 
+/* headers */
+
+.ben-header_title {
+  font-size: 4.8em;
+  line-height: 1em;
+}
+
+.ben-header_subtitle {
+  letter-spacing: 1em;
+}
+
+/* scale */
+
+/* text transforms */
+
+.upper {
+  text-transform: uppercase;
+}
 
 /* utilities */
 
@@ -73,4 +164,65 @@ html, body {
 
 .b-media__bd {
   flex: 1 0 0;
+}
+
+/* input elements */
+.b-input {
+  height: 40px;
+  margin-bottom: 1em;
+}
+
+.b-input_button {
+  cursor: pointer;
+  color: #7f8c8d;
+}
+
+.b-input_button__text {
+  padding-right: 20px;
+  line-height: 40px;
+}
+
+
+.b-input--outline {
+  border: 1px solid #7f8c8d;
+}
+
+.b-input__element {
+  height: 100%;
+  outline: none;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.b-input__icon {
+  width: 40px;
+  height: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.b-input--outline > .b-input__element {
+  background: transparent;
+  border: none;
+}
+
+/* floats */
+.b-float--right {
+  float: right;
+}
+
+.b-clearfix {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.b-clearfix:after { clear: both; }
+.b-clearfix { zoom: 1; }
+
+/* others */
+
+.hidden {
+  visibility: hidden;
 }

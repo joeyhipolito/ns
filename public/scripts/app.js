@@ -17,6 +17,7 @@ angular
       })
       .state('home.splash', {
         url: '/',
-        templateUrl: 'templates/home/splash.html'
+        templateUrl: 'templates/home/splash.html',
+        controller: 'AuthCtrl'
       });
   });
