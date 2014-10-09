@@ -4,14 +4,14 @@ angular.module('bensethApp')
     $scope.currentUser = UserService.getCurrentUser();
 
     $scope.login = function () {
-      Auth.login($scope.user).$promise.then(function (user) {
+      Auth.save($scope.user).$promise.then(function (user) {
         UserService.setCurrentUser(user);
         $state.go('admin');
-      });
+      })
     };
 
     $scope.logout = function () {
-      Auth.logout().$promise.then(function (re) {
+      Auth.delete().$promise.then(function (re) {
         UserService.setCurrentUser(null);
       });
     };
