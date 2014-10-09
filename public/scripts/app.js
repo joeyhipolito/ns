@@ -20,4 +20,18 @@ angular
         templateUrl: 'templates/home/splash.html',
         controller: 'AuthCtrl'
       });
-  });
+    $stateProvider
+      .state('admin', {
+        url: '/admin',
+        templateUrl: 'templates/admin/index.html',
+        controller: 'AuthCtrl'
+      });
+  })
+  .run(function ($location, UserService, Auth) {
+    var currentUser = UserService.getCurrentUser();
+    if (!currentUser && (['/', '/login', '/logout', '/register'].indexOf($location.path()) === -1)) {
+      Auth.get(function (user) {
+        UserService.setCurrentUser(user);
+      });
+    }
+  })
