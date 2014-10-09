@@ -21,6 +21,11 @@ html, body {
   width: 100%;
 }
 
+/* application specific (prefix: ben) */
+.ben-media__fig {
+  margin-right: 1em;
+}
+
 
 /* utilities */
 
@@ -53,3 +58,19 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
+/* media object */
+
+.b-media {
+  align-items: flex-start;
+}
+
+.b-media--center {
+  display: flex;
+  align-items: center;
+}
+
+.b-media__fig {}
+
+.b-media__bd {
+  flex: 1 0 0;
+}
