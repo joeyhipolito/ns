@@ -15,7 +15,6 @@ function session (req, res) {
 };
 
 function logout (req, res) {
-  res.clearCookie('user');
   req.logout();
 };
 
