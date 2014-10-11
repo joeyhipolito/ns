@@ -11,6 +11,8 @@ var errorhandler = require('errorhandler');
 var app    = express();
 var router = express.Router();
 
+// is LoggedIn middleware
+
 mongoose.connect(require('app/config.js').db.url);
 app.use(logger('dev'));
 app.use(bodyParser.json());
