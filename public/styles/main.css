@@ -190,7 +190,7 @@ a, a:link, a:active, a:visited {
 .b-input__element {
   height: 100%;
   outline: none;
-  color: #7f8c8d;
+  color: #333;
   margin: 0;
 }
 
